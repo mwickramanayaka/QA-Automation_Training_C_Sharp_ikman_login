@@ -21,6 +21,7 @@ namespace Test.Framework.Pages
         private By btnSignIn = By.XPath("//div[3]/div[2]/div[2]/div/form/div[2]/div/button");
         private By loginfailed = By.XPath("//div[3]/div[2]/div[2]/div/div[2]/span");
         private By btnGoToLogin = By.XPath("/html/body/nav/div/ul[3]/li[4]/a");
+        private By myaccountMenu = By.XPath("/html/body/nav/div/ul[3]/li[3]/a/span[contains(., 'My account')]");
 
         //private By btnLogOut = By.XPath("//a[@class='navbar-link']//span[@class='fa fa-sign-out']");
 
@@ -62,6 +63,11 @@ namespace Test.Framework.Pages
         {
             ikmanUI.sleep(5);
             return ikmanUI.IsElementVisible(loginfailed);
+        }
+        public bool loginDisplayedMyaccount()
+        {
+            ikmanUI.sleep(5);
+            return ikmanUI.IsElementVisible(myaccountMenu);
         }
         public void gotoPage(string url)
         {

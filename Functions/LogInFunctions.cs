@@ -23,6 +23,10 @@ namespace Test.Framework.Functions
         {
             return LogInPage.logInHeadingDisplayed();
         }
+        public static bool isLoginDisplayedMyaccount()
+        {
+            return LogInPage.loginDisplayedMyaccount();
+        }
         public static void isUserLogIn(String uname, String pwd)
         {
             LogInPage.enterUserName(uname);
