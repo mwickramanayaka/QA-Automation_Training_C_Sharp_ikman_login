@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Test.Framework.Pages;
-using OpenQA.Selenium.Chrome;
 
 namespace Test.Framework.Functions
 {
@@ -15,9 +10,9 @@ namespace Test.Framework.Functions
         {
            
         }
-        public static void isClickLoginBtn()
+        public static bool isClickLoginBtn()
         {
-            LogInPage.clickLoginBtn();
+            return LogInPage.clickLoginBtn();
         }
         public static bool isLogInHeadingDisplayed()
         {
@@ -27,19 +22,19 @@ namespace Test.Framework.Functions
         {
             return LogInPage.loginDisplayedMyaccount();
         }
-        public static void isUserLogIn(String uname, String pwd)
+        public static bool isUserLogIn(string uname, string pwd)
         {
             LogInPage.enterUserName(uname);
             LogInPage.enterPassword(pwd);
-            LogInPage.clickSignInBtn();
+            return LogInPage.clickSignInBtn();
         }
         public static bool isLoginFaildMSGdisplayed()
         {
             return LogInPage.loginFaildMSGdisplayed();
         }
-        public static void isGotoPage(String url)
+        public static bool isGotoPage(string url)
         {
-            LogInPage.gotoPage(url);
+            return LogInPage.gotoPage(url);
         }
     }
 }

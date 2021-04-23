@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using OpenQA.Selenium;
 using Test.Framework.Util;
 
@@ -33,31 +29,31 @@ namespace Test.Framework.Pages
         {
             ikmanUI = new IkmanUI(driver);
         }
-        public void clickLoginBtn()
+        public bool clickLoginBtn()
         {
-            ikmanUI.ClickElement(btnGoToLogin);
+            return ikmanUI.ClickElement(btnGoToLogin);
         }
         public bool logInHeadingDisplayed()
         {
             ikmanUI.sleep(15);
             return ikmanUI.IsElementVisible(loginHeading);
         }
-        public void enterUserName(String uName)
+        public void enterUserName(string uName)
         {
             ikmanUI.ClickElement(userName);
             ikmanUI.Textclear(userName);
             ikmanUI.ValueSendkeys(userName, uName);
         }
-        public void enterPassword(String pwd)
+        public void enterPassword(string pwd)
         {
             ikmanUI.ClickElement(password);
             ikmanUI.Textclear(password);
             ikmanUI.ValueSendkeys(password, pwd);
         }
-        public void clickSignInBtn()
+        public bool clickSignInBtn()
         {
             ikmanUI.WaitForElementVisible(btnSignIn);
-            ikmanUI.ClickElement(btnSignIn);
+            return ikmanUI.ClickElement(btnSignIn);
         }
         public bool loginFaildMSGdisplayed()
         {
@@ -69,9 +65,9 @@ namespace Test.Framework.Pages
             ikmanUI.sleep(5);
             return ikmanUI.IsElementVisible(myaccountMenu);
         }
-        public void gotoPage(string url)
+        public bool gotoPage(string url)
         {
-            ikmanUI.navigateTo(url);
+            return ikmanUI.navigateTo(url);
         }
     }
 }

@@ -1,16 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Timers;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using OpenQA.Selenium.Support.Extensions;
-using System.Diagnostics;
-using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Interactions;
-using OpenQA.Selenium.Chrome;
 using System.Collections;
 using System.Threading;
 
@@ -63,7 +57,7 @@ namespace Test.Framework.Util
             return this.waitTillElementLoaded(by, TimeSpan.FromSeconds(15));
         }
 
-        public void waitTillCSSAttributeValueToBePresent(IWebElement element, String attributeName, String expectedValue, long timeout)
+        public void waitTillCSSAttributeValueToBePresent(IWebElement element, string attributeName, string expectedValue, long timeout)
         {
             long counter = 0L;
             long timeoutNew = timeout * 1000L;
@@ -385,7 +379,7 @@ namespace Test.Framework.Util
         }      
 
         //SEND VALUES
-        public bool ValueSendkeys(By locator, String u)
+        public bool ValueSendkeys(By locator, string u)
         {
             bool returnValue = false;
             try
@@ -483,7 +477,7 @@ namespace Test.Framework.Util
             return returnValue;
         }
 
-        public string isDetailTextVisible(By locator, String DTtext)
+        public string isDetailTextVisible(By locator, string DTtext)
         {
             string returnValue = "";
             try
@@ -557,35 +551,35 @@ namespace Test.Framework.Util
         }
 
         //GET TEXT
-        public String GetText(By locator)
+        public string GetText(By locator)
         {
             IWebElement element = this.FindElement(locator);
             return element.Text;
         }
 
-        public String getText(IWebElement element)
+        public string getText(IWebElement element)
         {
             return element.Text;
         }
 
-        public String getTitle()
+        public string getTitle()
         {
             return this.driver.Title;
         }
 
-        public String GetInvisibleText(By locator)
+        public string GetInvisibleText(By locator)
         {
             return this.FindElement(locator).GetAttribute("textContent");
         }
 
-        public String GetFirstSelectedOptionText(By locator)
+        public string GetFirstSelectedOptionText(By locator)
         {
             SelectElement select = new SelectElement(this.FindElement(locator));
             IWebElement option = select.SelectedOption;
             return option.Text;
         }
 
-        public String getFirstSelectedOptionText(IWebElement element)
+        public string getFirstSelectedOptionText(IWebElement element)
         {
             SelectElement select = new SelectElement(element);
             IWebElement option = select.SelectedOption;
@@ -593,37 +587,37 @@ namespace Test.Framework.Util
         }
 
         //GET VALUE
-        public String GetAttribute(By by, String attributeName)
+        public string GetAttribute(By by, string attributeName)
         {
             return this.FindElement(by).GetAttribute(attributeName);
         }
 
-        public String GetAttribute(IWebElement element, String attributeName)
+        public string GetAttribute(IWebElement element, string attributeName)
         {
             return element.GetAttribute(attributeName);
         }
 
-        public String GetCssValue(By by, String attributeName)
+        public string GetCssValue(By by, string attributeName)
         {
             return this.FindElement(by).GetCssValue(attributeName);
         }
 
-        public String GetCssValue(IWebElement element, String attributeName)
+        public string GetCssValue(IWebElement element, string attributeName)
         {
             return element.GetCssValue(attributeName);
         }
 
-        public String GetValue(By by)
+        public string GetValue(By by)
         {
             return this.FindElement(by).GetAttribute("value");
         }
 
-        public String GetValue(IWebElement element)
+        public string GetValue(IWebElement element)
         {
             return element.GetAttribute("value");
         }
 
-        public void SelectFromDropDown(By by, String option)
+        public void SelectFromDropDown(By by, string option)
         {
             SelectElement oSelect = new SelectElement(driver.FindElement(by));
             oSelect.SelectByText(option);
@@ -737,7 +731,7 @@ namespace Test.Framework.Util
             IEnumerator var1 = this.driver.WindowHandles.GetEnumerator();
             /*while (var1.hasNext())
             {
-                String handle = (String)var1.next();
+                string handle = (string)var1.next();
                 this.driver.SwitchTo().Window(handle);
             }*/
         }
@@ -769,10 +763,28 @@ namespace Test.Framework.Util
         }
 
         //BROWSER FUNCTIONS
-        public void navigateTo(String url)
+        public bool navigateTo(string url)
         {
-            this.driver.Navigate().GoToUrl(url);
-            driver.Manage().Window.Maximize();
+            bool returnValue = false;
+            try
+            {
+                if (url != "" || url != null)
+                {
+                    this.driver.Navigate().GoToUrl(url);
+                    driver.Manage().Window.Maximize();
+                    returnValue = true;
+                }
+                else
+                {
+                    Console.WriteLine("navigateTo # " + url + " #");
+                    returnValue = false;
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Exception Unknown error # " + e.Message + " # occurred on page ");
+            }
+            return returnValue;
         }
 
         public void navigateBack()
@@ -785,7 +797,7 @@ namespace Test.Framework.Util
             this.driver.Navigate().Refresh();
         }
 
-        public void select(By by, String option)
+        public void select(By by, string option)
         {
             (new SelectElement(this.FindElement(by))).SelectByText(option);
         }
@@ -804,7 +816,7 @@ namespace Test.Framework.Util
             }
         }
 
-        public String getAlertText()
+        public string getAlertText()
         {
             IAlert simpleAlert = this.driver.SwitchTo().Alert();
             return simpleAlert.Text;

@@ -1,13 +1,4 @@
-﻿using System;
-using System.Text;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Chrome;
-//using AventStack.ExtentReports;
-using System.IO;
-//using AventStack.ExtentReports.Reporter;
-using NUnit.Framework;
-using NUnit.Framework.Interfaces;
-using System.Threading;
+﻿using OpenQA.Selenium;
 using Test.Framework.Util;
 
 namespace Test.Framework.Pages
