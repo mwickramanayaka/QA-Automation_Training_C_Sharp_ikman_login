@@ -13,6 +13,7 @@ namespace Test.Framework.tests.Login
         {
             Assert.IsTrue(LogInFunctions.isGotoPage(Settings.LoginUrl));
             Assert.IsTrue(LogInFunctions.isClickLoginBtn());
+            Assert.IsTrue(LogInFunctions.isClickLoginBtns());
             Assert.IsTrue(LogInFunctions.isLogInHeadingDisplayed());
         }
         [Test]
@@ -20,6 +21,7 @@ namespace Test.Framework.tests.Login
         {
             Assert.IsTrue(LogInFunctions.isGotoPage(Settings.LoginUrl));
             Assert.IsTrue(LogInFunctions.isClickLoginBtn());
+            Assert.IsTrue(LogInFunctions.isClickLoginBtns());
             Assert.IsTrue(LogInFunctions.isUserLogIn(Settings.UserName_wrong, Settings.Password_Correct));
             Assert.IsTrue(LogInFunctions.isLoginFaildMSGdisplayed());
         }
@@ -28,6 +30,7 @@ namespace Test.Framework.tests.Login
         {
             Assert.IsTrue(LogInFunctions.isGotoPage(Settings.LoginUrl));
             Assert.IsTrue(LogInFunctions.isClickLoginBtn());
+            Assert.IsTrue(LogInFunctions.isClickLoginBtns());
             Assert.IsTrue(LogInFunctions.isUserLogIn(Settings.UserName_Correct, Settings.Password_wrong));
             Assert.IsTrue(LogInFunctions.isLoginFaildMSGdisplayed());
         }
@@ -36,6 +39,7 @@ namespace Test.Framework.tests.Login
         {
             Assert.IsTrue(LogInFunctions.isGotoPage(Settings.LoginUrl));
             Assert.IsTrue(LogInFunctions.isClickLoginBtn());
+            Assert.IsTrue(LogInFunctions.isClickLoginBtns());
             Assert.IsTrue(LogInFunctions.isUserLogIn(Settings.UserName_Correct, Settings.Password_Correct));
             Assert.IsTrue(LogInFunctions.isLoginDisplayedMyaccount());
         }
