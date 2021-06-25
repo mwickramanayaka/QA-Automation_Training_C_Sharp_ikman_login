@@ -24,7 +24,6 @@ namespace Test.Framework.Pages
         //private By btnGotoLogins = By.XPath("//div[2]/div[3]/div[2]/div[2]/div[1]/div[3]/button/[contains(., 'Continue with Email')]");
 
         //private By btnLogOut = By.XPath("//a[@class='navbar-link']//span[@class='fa fa-sign-out']");
-
         //private By logoutPage = By.XPath("//div[@class='container page-loggedOut']");
 
 
