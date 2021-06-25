@@ -4,17 +4,19 @@ using Test.Framework.Functions;
 
 namespace Test.Framework.tests.Login
 {
-    [Category("Login")]
+    [Category("Login-Page")]
+    [Category("Mini-Reg")]
     [TestFixture]
-    class TS_Login_rdm : TestBase
+    class TS_Login_ikman : TestBase
     {
         [Test]
-        public void TC_TS01_Login_loaded_AC1()
+        public void TC_TS01_Login_loaded_AC1()    
         {
             Assert.IsTrue(LogInFunctions.isGotoPage(Settings.LoginUrl));
             Assert.IsTrue(LogInFunctions.isClickLoginBtn());
             Assert.IsTrue(LogInFunctions.isClickLoginBtns());
             Assert.IsTrue(LogInFunctions.isLogInHeadingDisplayed());
+            
         }
         [Test]
         public void TC_TS02_Login_wrong_username_AC2()

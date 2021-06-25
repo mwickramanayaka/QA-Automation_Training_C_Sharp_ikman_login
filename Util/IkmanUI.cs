@@ -42,7 +42,7 @@ namespace Test.Framework.Util
         //WAITING FOR ELEMENTS
         public IWebElement WaitForElementVisible(By locator)
         {
-            WebDriverWait wait = new WebDriverWait(driver, System.TimeSpan.FromSeconds(1000));
+            WebDriverWait wait = new WebDriverWait(driver, System.TimeSpan.FromSeconds(20));
             IWebElement element = wait.Until(ExpectedConditions.ElementIsVisible(locator));
             return element;
         }
@@ -770,7 +770,7 @@ namespace Test.Framework.Util
             {
                 if (url != "" || url != null)
                 {
-                    this.driver.Navigate().GoToUrl(url);
+                    this.driver.Navigate().GoToUrl(url); //ctrl+shft+f9
                     driver.Manage().Window.Maximize();
                     returnValue = true;
                 }

@@ -13,11 +13,13 @@ namespace Test.Framework.Functions
         public static bool isClickLoginBtn()
         {
             return LogInPage.clickLoginBtn();
-        }
-        public static bool isClickLoginBtns()
+         }
+       
+        public static bool isClickLoginBtns() 
         {
             return LogInPage.clickLoginBtns();
         }
+       
         public static bool isLogInHeadingDisplayed()
         {
             return LogInPage.logInHeadingDisplayed();
@@ -40,5 +42,6 @@ namespace Test.Framework.Functions
         {
             return LogInPage.gotoPage(url);
         }
+
     }
 }

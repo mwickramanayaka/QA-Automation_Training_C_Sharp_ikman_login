@@ -28,7 +28,7 @@ namespace Test.Framework.Util
             {
                 //To create report directory and add HTML report into it
                 DriverSetup.GetDriverSetupInstance().StartDriver();
-                driver = DriverSetup.GetDriverSetupInstance().GetWebDriver();
+                driver = DriverSetup.GetDriverSetupInstance().GetWebDriver(); 
                 //_extent = new ExtentReports();
                 var dir = AppDomain.CurrentDomain.BaseDirectory.Replace("\\bin\\Debug", "");
                 DirectoryInfo di = Directory.CreateDirectory(dir + "\\Test_Execution_Reports");
