@@ -15,12 +15,13 @@ namespace Test.Framework.Pages
         private By loginHeading = By.XPath("//*[@id='app-wrapper']/div[2]/div[3]/div[2]/div[1]/h1[contains(., 'Log in to ikman')]");
         private By userName = By.Id("input_email");
         private By password = By.Id("input_password");
-        private By btnSignIn = By.XPaths("//div[3]/div[2]/div[2]/div/form/div[2]/div/button");
+        private By btnSignIn = By.XPath("//div[3]/div[2]/div[2]/div/form/div[2]/div/button");
         private By loginfailed = By.XPath("//div[2]/div[2]/div/div/span");
         private By myaccountMenu = By.XPath("/html/body/nav/div/ul[3]/li[3]/a/span[contains(., 'My account')]");      
        
+
         //private By btnGotoLogins = By.XPath("//div[2]/div[2]/div/div[3]/button");
-        private By btnGotoLogins = By.XPath("//*[text()='Continue with Email']");
+        private By btnGotoEmail = By.XPath("//*[text()='Continue with Email']");
         //private By btnGotoLogins = By.XPath("//div[2]/div[3]/div[2]/div[2]/div[1]/div[3]/button/[contains(., 'Continue with Email')]");
 
         //private By btnLogOut = By.XPath("//a[@class='navbar-link']//span[@class='fa fa-sign-out']");
@@ -37,9 +38,9 @@ namespace Test.Framework.Pages
             return ikmanUI.ClickElement(btnGoToLogin);
         }
         
-        public bool clickLoginBtns()
+        public bool ClickEmailBtn()
         {
-            return ikmanUI.ClickElement(btnGotoLogins);
+            return ikmanUI.ClickElement(btnGotoEmail);
         }
      
         public bool logInHeadingDisplayed()
@@ -71,7 +72,7 @@ namespace Test.Framework.Pages
         }
         public bool loginDisplayedMyaccount()
         {
-            ikmanUI.sleep(5);
+            ikmanUI.sleep(10);
             return ikmanUI.IsElementVisible(myaccountMenu);
         }
         public bool gotoPage(string url)
@@ -79,5 +80,9 @@ namespace Test.Framework.Pages
             return ikmanUI.navigateTo(url);
         }
 
+        public bool clickMyAccount()
+        {
+            return ikmanUI.ClickElement(myaccountMenu);
+        }
     }
 }

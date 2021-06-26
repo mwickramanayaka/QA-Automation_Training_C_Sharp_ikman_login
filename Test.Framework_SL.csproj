@@ -108,10 +108,13 @@
   <ItemGroup>
     <Compile Include="Extensions\NameValueCollectionExtensions.cs" />
     <Compile Include="Functions\LogInFunctions.cs" />
+    <Compile Include="Functions\MyAccountFunctions.cs" />
     <Compile Include="Pages\LogInPage.cs" />
+    <Compile Include="Pages\MyAccountPage.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="Tests\Login\TS_Login_ikman.cs" />
     <Compile Include="Pages\BasePage.cs" />
+    <Compile Include="Tests\MyAccount\TS_MyAccount_ikman.cs" />
     <Compile Include="Util\IkmanUI.cs" />
     <Compile Include="Util\DriverSetup.cs" />
     <Compile Include="Util\TestBase.cs" />
